@@ -8,12 +8,13 @@
 1. Install the **"Downloader" app (AFTVnews)** on the Fire TV.
 2. Settings → My Fire TV → Developer options → **Install unknown apps: Downloader → ON**.
 3. Open Downloader → enter URL:
-   `https://tinyurl.com/bigplay-tv`
-   (Long form: `https://github.com/FLOKHOME/bigplay-apk/releases/latest/download/BigPlay-3.0.2.apk`)
+   - **Fire OS 7** (Stick 2021/3rd gen, 4K Max, Cube 2nd gen): `https://tinyurl.com/bigplay-tv`
+   - **Fire OS 6** (Stick 4K 2018, Cube 1st gen): `https://tinyurl.com/bigplay-fos6` ← patched variant `BigPlay-3.0.2-vc21-minSdk23.apk` (minSdk 23, see below)
 4. Install the APK; delete the file from Downloader's history afterwards.
 
 ## Requirements
-- Fire OS 6 or newer (minSdk 26 = Android 8.0) → Fire TV Stick 4K (2018+), Stick 3rd gen / 4K Max, Cube. **Not** for older Fire OS 5 sticks (2016/2017).
+- BigPlay original: Fire OS 7+ (minSdk 26 = Android 8.0) → Fire TV Stick 3rd gen/4K Max/Lite, Cube 2nd gen. The official app was **never** installable on Fire OS 6 (4K Stick 2018, API 25) – all versions 1.x–3.x require minSdk 26.
+- Fire OS 6 → only with the patched variant (`-vc21-minSdk23`): minSdk 23, adaptive icons moved to v26, `startForegroundService` guarded with an SDK-26 check (WorkManager), `extractNativeLibs=true`. Remaining risk: the notification/EPG-reminder path uses channel APIs without a guard → may crash on Android 7 if you use EPG reminders.
 - The CPU split is **armeabi-v7a** (32-bit) – runs on all of the above.
 
 ## Notes
