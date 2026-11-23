@@ -14,7 +14,7 @@
 
 ## Requirements
 - BigPlay original: Fire OS 7+ (minSdk 26 = Android 8.0) → Fire TV Stick 3rd gen/4K Max/Lite, Cube 2nd gen. The official app was **never** installable on Fire OS 6 (4K Stick 2018, API 25) – all versions 1.x–3.x require minSdk 26.
-- Fire OS 6 → only with the patched variant (`-vc21-minSdk23`): minSdk 23, adaptive icons moved to v26, `startForegroundService` guarded with an SDK-26 check (WorkManager), `extractNativeLibs=true`. Remaining risk: the notification/EPG-reminder path uses channel APIs without a guard → may crash on Android 7 if you use EPG reminders.
+- Fire OS 6 → only with the patched variant (`-vc21-minSdk23`): minSdk 23, adaptive icons moved to v26, `startForegroundService` guarded with an SDK-26 check (WorkManager), `extractNativeLibs=true`, **PairIP license check removed** (Fire TV has no Play licensing service – the original APK dies at startup on Fire TV regardless of signature). Remaining risk: the notification/EPG-reminder path uses channel APIs without a guard → may crash on Android 7 if you use EPG reminders.
 - The CPU split is **armeabi-v7a** (32-bit) – runs on all of the above.
 
 ## Notes
